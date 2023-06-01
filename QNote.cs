@@ -22,5 +22,11 @@ namespace QNote
             this.Hide();
             new QNoteSettings().Show();
         }
+
+        private void QNote_Resize(object sender, EventArgs e)
+        {
+            //width 22
+            //height 147
+        }
     }
 }

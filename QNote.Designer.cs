@@ -302,6 +302,7 @@
             this.Name = "QNote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QNote";
+            this.Resize += new System.EventHandler(this.QNote_Resize);
             this.Options.ResumeLayout(false);
             this.Options.PerformLayout();
             this.Status.ResumeLayout(false);
