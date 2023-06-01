@@ -1,0 +1,11 @@
+C:\Users\Melquiceded\Documents\csharp\QNote\bin\Debug\QNote.exe.config
+C:\Users\Melquiceded\Documents\csharp\QNote\bin\Debug\QNote.exe
+C:\Users\Melquiceded\Documents\csharp\QNote\bin\Debug\QNote.pdb
+C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.csproj.AssemblyReference.cache
+C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.csproj.SuggestedBindingRedirects.cache
+C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.Properties.Resources.resources
+C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.QNote.resources
+C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.csproj.GenerateResource.cache
+C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.csproj.CoreCompileInputs.cache
+C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.exe
+C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.pdb
