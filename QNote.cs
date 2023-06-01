@@ -16,5 +16,11 @@ namespace QNote
         {
             InitializeComponent();
         }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new QNoteSettings().Show();
+        }
     }
 }

@@ -9,3 +9,4 @@ C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.csproj.GenerateResou
 C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.csproj.CoreCompileInputs.cache
 C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.exe
 C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.pdb
+C:\Users\Melquiceded\Documents\csharp\QNote\obj\Debug\QNote.QNoteSettings.resources

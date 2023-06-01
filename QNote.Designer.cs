@@ -119,6 +119,7 @@
             this.Settings.Image = ((System.Drawing.Image)(resources.GetObject("Settings.Image")));
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(40, 29);
+            this.Settings.Click += new System.EventHandler(this.Settings_Click);
             // 
             // InputBox
             // 
