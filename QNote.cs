@@ -27,7 +27,11 @@ namespace QNote
         {
             //width 22
             //height 147
-         //   this.InputBox.Size.Width = this.
+            //this.InputBox = new Control()
+            //{
+                
+            //};
+            ////this.InputBox.Size.Height = this.Height - 147; 
         }
     }
 }
