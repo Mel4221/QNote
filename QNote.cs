@@ -27,6 +27,7 @@ namespace QNote
         {
             //width 22
             //height 147
+         //   this.InputBox.Size.Width = this.
         }
     }
 }
