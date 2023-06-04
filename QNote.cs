@@ -15,8 +15,16 @@ namespace QNote
         public QNote()
         {
             InitializeComponent();
-        }
+            this.InitComponents();
 
+        }
+        private void InitComponents()
+        {
+            RichTextBox box = this.InputBox;
+            //box.Size = new Size(this.Width - 22, this.Height - 147);
+            box.Size = new Size(this.Width - 22, this.Height - 100);
+            this.Controls.Add(box);
+        }
         private void Settings_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -29,9 +37,14 @@ namespace QNote
             //height 147
             //this.InputBox = new Control()
             //{
-                
+
             //};
             ////this.InputBox.Size.Height = this.Height - 147; 
+            //this.Text = $"X{this.Width} Y{this.Height}";
+            RichTextBox box = this.InputBox;
+            //box.Size = new Size(this.Width - 22, this.Height - 147);
+            box.Size = new Size(this.Width - 22, this.Height - 100);
+            this.Controls.Add(box);
         }
     }
 }
