@@ -31,35 +31,35 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QNote));
             this.Options = new System.Windows.Forms.MenuStrip();
             this.File = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.FilePrint = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.Edit = new System.Windows.Forms.ToolStripMenuItem();
-            this.unduToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.findNextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditUndu = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditCut = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditPaste = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditFind = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditDate = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditFont = new System.Windows.Forms.ToolStripMenuItem();
             this.Views = new System.Windows.Forms.ToolStripMenuItem();
-            this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zoomInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zoomOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusBArToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ViewZoom = new System.Windows.Forms.ToolStripMenuItem();
+            this.ViewSoomIn = new System.Windows.Forms.ToolStripMenuItem();
+            this.ViewZoomOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.ViewZoomReset = new System.Windows.Forms.ToolStripMenuItem();
+            this.ViewStatusBar = new System.Windows.Forms.ToolStripMenuItem();
             this.Settings = new System.Windows.Forms.ToolStripMenuItem();
             this.InputBox = new System.Windows.Forms.RichTextBox();
-            this.Status = new System.Windows.Forms.ToolStrip();
+            this.StatusBar = new System.Windows.Forms.ToolStrip();
             this.LCStatus = new System.Windows.Forms.ToolStripLabel();
             this.UnicodeType = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.ZoomStatus = new System.Windows.Forms.ToolStripLabel();
             this.Options.SuspendLayout();
-            this.Status.SuspendLayout();
+            this.StatusBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // Options
@@ -80,152 +80,155 @@
             // File
             // 
             this.File.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.printToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.FileOpen,
+            this.FileSave,
+            this.FileSaveAs,
+            this.FilePrint,
+            this.FileExit});
             this.File.Name = "File";
             this.File.Size = new System.Drawing.Size(54, 29);
             this.File.Text = "File";
             // 
-            // openToolStripMenuItem
+            // FileOpen
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
-            this.openToolStripMenuItem.Text = "Open";
+            this.FileOpen.Name = "FileOpen";
+            this.FileOpen.Size = new System.Drawing.Size(270, 34);
+            this.FileOpen.Text = "Open";
+            this.FileOpen.Click += new System.EventHandler(this.FileOpen_Click);
             // 
-            // saveToolStripMenuItem
+            // FileSave
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
-            this.saveToolStripMenuItem.Text = "Save";
+            this.FileSave.Name = "FileSave";
+            this.FileSave.Size = new System.Drawing.Size(270, 34);
+            this.FileSave.Text = "Save";
             // 
-            // saveAsToolStripMenuItem
+            // FileSaveAs
             // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
-            this.saveAsToolStripMenuItem.Text = "Save As";
+            this.FileSaveAs.Name = "FileSaveAs";
+            this.FileSaveAs.Size = new System.Drawing.Size(270, 34);
+            this.FileSaveAs.Text = "Save As";
             // 
-            // printToolStripMenuItem
+            // FilePrint
             // 
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
-            this.printToolStripMenuItem.Text = "Print";
+            this.FilePrint.Name = "FilePrint";
+            this.FilePrint.Size = new System.Drawing.Size(270, 34);
+            this.FilePrint.Text = "Print";
             // 
-            // exitToolStripMenuItem
+            // FileExit
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.FileExit.Name = "FileExit";
+            this.FileExit.Size = new System.Drawing.Size(270, 34);
+            this.FileExit.Text = "Exit";
+            this.FileExit.Click += new System.EventHandler(this.FileExit_Click);
             // 
             // Edit
             // 
             this.Edit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.unduToolStripMenuItem,
-            this.cutToolStripMenuItem,
-            this.copyToolStripMenuItem,
-            this.pasteToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.findToolStripMenuItem,
-            this.findNextToolStripMenuItem,
-            this.fontToolStripMenuItem});
+            this.EditUndu,
+            this.EditCut,
+            this.EditCopy,
+            this.EditPaste,
+            this.EditDelete,
+            this.EditFind,
+            this.EditDate,
+            this.EditFont});
             this.Edit.Name = "Edit";
             this.Edit.Size = new System.Drawing.Size(58, 29);
             this.Edit.Text = "Edit";
             // 
-            // unduToolStripMenuItem
+            // EditUndu
             // 
-            this.unduToolStripMenuItem.Name = "unduToolStripMenuItem";
-            this.unduToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
-            this.unduToolStripMenuItem.Text = "Undu";
+            this.EditUndu.Name = "EditUndu";
+            this.EditUndu.Size = new System.Drawing.Size(270, 34);
+            this.EditUndu.Text = "Undu";
             // 
-            // cutToolStripMenuItem
+            // EditCut
             // 
-            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
-            this.cutToolStripMenuItem.Text = "Cut";
+            this.EditCut.Name = "EditCut";
+            this.EditCut.Size = new System.Drawing.Size(270, 34);
+            this.EditCut.Text = "Cut";
             // 
-            // copyToolStripMenuItem
+            // EditCopy
             // 
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
-            this.copyToolStripMenuItem.Text = "Copy";
+            this.EditCopy.Name = "EditCopy";
+            this.EditCopy.Size = new System.Drawing.Size(270, 34);
+            this.EditCopy.Text = "Copy";
             // 
-            // pasteToolStripMenuItem
+            // EditPaste
             // 
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
-            this.pasteToolStripMenuItem.Text = "Paste";
+            this.EditPaste.Name = "EditPaste";
+            this.EditPaste.Size = new System.Drawing.Size(270, 34);
+            this.EditPaste.Text = "Paste";
             // 
-            // deleteToolStripMenuItem
+            // EditDelete
             // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
-            this.deleteToolStripMenuItem.Text = "Delete";
+            this.EditDelete.Name = "EditDelete";
+            this.EditDelete.Size = new System.Drawing.Size(270, 34);
+            this.EditDelete.Text = "Delete";
             // 
-            // findToolStripMenuItem
+            // EditFind
             // 
-            this.findToolStripMenuItem.Name = "findToolStripMenuItem";
-            this.findToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
-            this.findToolStripMenuItem.Text = "Find";
+            this.EditFind.Name = "EditFind";
+            this.EditFind.Size = new System.Drawing.Size(270, 34);
+            this.EditFind.Text = "Find";
             // 
-            // findNextToolStripMenuItem
+            // EditDate
             // 
-            this.findNextToolStripMenuItem.Name = "findNextToolStripMenuItem";
-            this.findNextToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
-            this.findNextToolStripMenuItem.Text = "Time / Date";
+            this.EditDate.Name = "EditDate";
+            this.EditDate.Size = new System.Drawing.Size(270, 34);
+            this.EditDate.Text = "Time / Date";
             // 
-            // fontToolStripMenuItem
+            // EditFont
             // 
-            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
-            this.fontToolStripMenuItem.Text = "Font";
+            this.EditFont.Name = "EditFont";
+            this.EditFont.Size = new System.Drawing.Size(270, 34);
+            this.EditFont.Text = "Font";
             // 
             // Views
             // 
             this.Views.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zoomToolStripMenuItem,
-            this.statusBArToolStripMenuItem});
+            this.ViewZoom,
+            this.ViewStatusBar});
             this.Views.Name = "Views";
             this.Views.Size = new System.Drawing.Size(65, 29);
             this.Views.Text = "View";
             // 
-            // zoomToolStripMenuItem
+            // ViewZoom
             // 
-            this.zoomToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zoomInToolStripMenuItem,
-            this.zoomOutToolStripMenuItem,
-            this.resetToolStripMenuItem});
-            this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
-            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
-            this.zoomToolStripMenuItem.Text = "Zoom";
+            this.ViewZoom.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ViewSoomIn,
+            this.ViewZoomOut,
+            this.ViewZoomReset});
+            this.ViewZoom.Name = "ViewZoom";
+            this.ViewZoom.Size = new System.Drawing.Size(270, 34);
+            this.ViewZoom.Text = "Zoom";
             // 
-            // zoomInToolStripMenuItem
+            // ViewSoomIn
             // 
-            this.zoomInToolStripMenuItem.Name = "zoomInToolStripMenuItem";
-            this.zoomInToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
-            this.zoomInToolStripMenuItem.Text = "Zoom In";
+            this.ViewSoomIn.Name = "ViewSoomIn";
+            this.ViewSoomIn.Size = new System.Drawing.Size(288, 34);
+            this.ViewSoomIn.Text = "Zoom In";
             // 
-            // zoomOutToolStripMenuItem
+            // ViewZoomOut
             // 
-            this.zoomOutToolStripMenuItem.Name = "zoomOutToolStripMenuItem";
-            this.zoomOutToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
-            this.zoomOutToolStripMenuItem.Text = "Zoom Out";
+            this.ViewZoomOut.Name = "ViewZoomOut";
+            this.ViewZoomOut.Size = new System.Drawing.Size(288, 34);
+            this.ViewZoomOut.Text = "Zoom Out";
             // 
-            // resetToolStripMenuItem
+            // ViewZoomReset
             // 
-            this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
-            this.resetToolStripMenuItem.Text = "Restore Default Zoom";
+            this.ViewZoomReset.Name = "ViewZoomReset";
+            this.ViewZoomReset.Size = new System.Drawing.Size(288, 34);
+            this.ViewZoomReset.Text = "Restore Default Zoom";
             // 
-            // statusBArToolStripMenuItem
+            // ViewStatusBar
             // 
-            this.statusBArToolStripMenuItem.Checked = true;
-            this.statusBArToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.statusBArToolStripMenuItem.Name = "statusBArToolStripMenuItem";
-            this.statusBArToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
-            this.statusBArToolStripMenuItem.Text = "Status Bar";
+            this.ViewStatusBar.Checked = true;
+            this.ViewStatusBar.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ViewStatusBar.Name = "ViewStatusBar";
+            this.ViewStatusBar.Size = new System.Drawing.Size(270, 34);
+            this.ViewStatusBar.Text = "Status Bar";
+            this.ViewStatusBar.Click += new System.EventHandler(this.ViewStatusBar_Click);
             // 
             // Settings
             // 
@@ -237,6 +240,9 @@
             // 
             // InputBox
             // 
+            this.InputBox.BackColor = System.Drawing.Color.Black;
+            this.InputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputBox.ForeColor = System.Drawing.Color.Lime;
             this.InputBox.Location = new System.Drawing.Point(0, 50);
             this.InputBox.Name = "InputBox";
             this.InputBox.Size = new System.Drawing.Size(1059, 558);
@@ -244,19 +250,19 @@
             this.InputBox.TabStop = false;
             this.InputBox.Text = "";
             // 
-            // Status
+            // StatusBar
             // 
-            this.Status.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Status.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.Status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.StatusBar.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LCStatus,
             this.UnicodeType,
             this.toolStripLabel3,
             this.ZoomStatus});
-            this.Status.Location = new System.Drawing.Point(0, 619);
-            this.Status.Name = "Status";
-            this.Status.Size = new System.Drawing.Size(1059, 30);
-            this.Status.TabIndex = 2;
+            this.StatusBar.Location = new System.Drawing.Point(0, 619);
+            this.StatusBar.Name = "StatusBar";
+            this.StatusBar.Size = new System.Drawing.Size(1059, 30);
+            this.StatusBar.TabIndex = 2;
             // 
             // LCStatus
             // 
@@ -293,7 +299,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1059, 649);
-            this.Controls.Add(this.Status);
+            this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.InputBox);
             this.Controls.Add(this.Options);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -304,8 +310,8 @@
             this.Resize += new System.EventHandler(this.QNote_Resize);
             this.Options.ResumeLayout(false);
             this.Options.PerformLayout();
-            this.Status.ResumeLayout(false);
-            this.Status.PerformLayout();
+            this.StatusBar.ResumeLayout(false);
+            this.StatusBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,29 +325,29 @@
         private System.Windows.Forms.ToolStripMenuItem Views;
         private System.Windows.Forms.ToolStripMenuItem Settings;
         private System.Windows.Forms.RichTextBox InputBox;
-        private System.Windows.Forms.ToolStrip Status;
+        private System.Windows.Forms.ToolStrip StatusBar;
         private System.Windows.Forms.ToolStripLabel LCStatus;
         private System.Windows.Forms.ToolStripLabel ZoomStatus;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.ToolStripLabel UnicodeType;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem unduToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem findNextToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zoomToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zoomInToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zoomOutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem statusBArToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FileOpen;
+        private System.Windows.Forms.ToolStripMenuItem FileSave;
+        private System.Windows.Forms.ToolStripMenuItem FileSaveAs;
+        private System.Windows.Forms.ToolStripMenuItem FilePrint;
+        private System.Windows.Forms.ToolStripMenuItem FileExit;
+        private System.Windows.Forms.ToolStripMenuItem EditUndu;
+        private System.Windows.Forms.ToolStripMenuItem EditCut;
+        private System.Windows.Forms.ToolStripMenuItem EditCopy;
+        private System.Windows.Forms.ToolStripMenuItem EditPaste;
+        private System.Windows.Forms.ToolStripMenuItem EditDelete;
+        private System.Windows.Forms.ToolStripMenuItem EditFind;
+        private System.Windows.Forms.ToolStripMenuItem EditDate;
+        private System.Windows.Forms.ToolStripMenuItem EditFont;
+        private System.Windows.Forms.ToolStripMenuItem ViewZoom;
+        private System.Windows.Forms.ToolStripMenuItem ViewSoomIn;
+        private System.Windows.Forms.ToolStripMenuItem ViewZoomOut;
+        private System.Windows.Forms.ToolStripMenuItem ViewZoomReset;
+        private System.Windows.Forms.ToolStripMenuItem ViewStatusBar;
     }
 }
 
