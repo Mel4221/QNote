@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QNote));
             this.Options = new System.Windows.Forms.MenuStrip();
-            this.File = new System.Windows.Forms.ToolStripMenuItem();
+            this.QFile = new System.Windows.Forms.ToolStripMenuItem();
             this.FileOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.FileSave = new System.Windows.Forms.ToolStripMenuItem();
             this.FileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +58,7 @@
             this.UnicodeType = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.ZoomStatus = new System.Windows.Forms.ToolStripLabel();
+            this.InputBoxFind = new System.Windows.Forms.ToolStripTextBox();
             this.Options.SuspendLayout();
             this.StatusBar.SuspendLayout();
             this.SuspendLayout();
@@ -67,27 +68,28 @@
             this.Options.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.Options.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.Options.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.File,
+            this.QFile,
             this.Edit,
             this.Views,
-            this.Settings});
+            this.Settings,
+            this.InputBoxFind});
             this.Options.Location = new System.Drawing.Point(0, 0);
             this.Options.Name = "Options";
-            this.Options.Size = new System.Drawing.Size(1059, 33);
+            this.Options.Size = new System.Drawing.Size(1059, 41);
             this.Options.TabIndex = 0;
             this.Options.Text = "Options";
             // 
-            // File
+            // QFile
             // 
-            this.File.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.QFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileOpen,
             this.FileSave,
             this.FileSaveAs,
             this.FilePrint,
             this.FileExit});
-            this.File.Name = "File";
-            this.File.Size = new System.Drawing.Size(54, 29);
-            this.File.Text = "File";
+            this.QFile.Name = "QFile";
+            this.QFile.Size = new System.Drawing.Size(54, 31);
+            this.QFile.Text = "File";
             // 
             // FileOpen
             // 
@@ -101,18 +103,21 @@
             this.FileSave.Name = "FileSave";
             this.FileSave.Size = new System.Drawing.Size(270, 34);
             this.FileSave.Text = "Save";
+            this.FileSave.Click += new System.EventHandler(this.FileSave_Click);
             // 
             // FileSaveAs
             // 
             this.FileSaveAs.Name = "FileSaveAs";
             this.FileSaveAs.Size = new System.Drawing.Size(270, 34);
             this.FileSaveAs.Text = "Save As";
+            this.FileSaveAs.Click += new System.EventHandler(this.FileSaveAs_Click);
             // 
             // FilePrint
             // 
             this.FilePrint.Name = "FilePrint";
             this.FilePrint.Size = new System.Drawing.Size(270, 34);
             this.FilePrint.Text = "Print";
+            this.FilePrint.Click += new System.EventHandler(this.FilePrint_Click);
             // 
             // FileExit
             // 
@@ -133,7 +138,7 @@
             this.EditDate,
             this.EditFont});
             this.Edit.Name = "Edit";
-            this.Edit.Size = new System.Drawing.Size(58, 29);
+            this.Edit.Size = new System.Drawing.Size(58, 37);
             this.Edit.Text = "Edit";
             // 
             // EditUndu
@@ -141,6 +146,7 @@
             this.EditUndu.Name = "EditUndu";
             this.EditUndu.Size = new System.Drawing.Size(270, 34);
             this.EditUndu.Text = "Undu";
+            this.EditUndu.Click += new System.EventHandler(this.EditUndu_Click);
             // 
             // EditCut
             // 
@@ -153,30 +159,35 @@
             this.EditCopy.Name = "EditCopy";
             this.EditCopy.Size = new System.Drawing.Size(270, 34);
             this.EditCopy.Text = "Copy";
+            this.EditCopy.Click += new System.EventHandler(this.EditCopy_Click);
             // 
             // EditPaste
             // 
             this.EditPaste.Name = "EditPaste";
             this.EditPaste.Size = new System.Drawing.Size(270, 34);
             this.EditPaste.Text = "Paste";
+            this.EditPaste.Click += new System.EventHandler(this.EditPaste_Click);
             // 
             // EditDelete
             // 
             this.EditDelete.Name = "EditDelete";
             this.EditDelete.Size = new System.Drawing.Size(270, 34);
             this.EditDelete.Text = "Delete";
+            this.EditDelete.Click += new System.EventHandler(this.EditDelete_Click);
             // 
             // EditFind
             // 
             this.EditFind.Name = "EditFind";
             this.EditFind.Size = new System.Drawing.Size(270, 34);
             this.EditFind.Text = "Find";
+            this.EditFind.Click += new System.EventHandler(this.EditFind_Click);
             // 
             // EditDate
             // 
             this.EditDate.Name = "EditDate";
             this.EditDate.Size = new System.Drawing.Size(270, 34);
             this.EditDate.Text = "Time / Date";
+            this.EditDate.Click += new System.EventHandler(this.EditDate_Click);
             // 
             // EditFont
             // 
@@ -190,7 +201,7 @@
             this.ViewZoom,
             this.ViewStatusBar});
             this.Views.Name = "Views";
-            this.Views.Size = new System.Drawing.Size(65, 29);
+            this.Views.Size = new System.Drawing.Size(65, 37);
             this.Views.Text = "View";
             // 
             // ViewZoom
@@ -208,18 +219,21 @@
             this.ViewSoomIn.Name = "ViewSoomIn";
             this.ViewSoomIn.Size = new System.Drawing.Size(288, 34);
             this.ViewSoomIn.Text = "Zoom In";
+            this.ViewSoomIn.Click += new System.EventHandler(this.ViewSoomIn_Click);
             // 
             // ViewZoomOut
             // 
             this.ViewZoomOut.Name = "ViewZoomOut";
             this.ViewZoomOut.Size = new System.Drawing.Size(288, 34);
             this.ViewZoomOut.Text = "Zoom Out";
+            this.ViewZoomOut.Click += new System.EventHandler(this.ViewZoomOut_Click);
             // 
             // ViewZoomReset
             // 
             this.ViewZoomReset.Name = "ViewZoomReset";
             this.ViewZoomReset.Size = new System.Drawing.Size(288, 34);
             this.ViewZoomReset.Text = "Restore Default Zoom";
+            this.ViewZoomReset.Click += new System.EventHandler(this.ViewZoomReset_Click);
             // 
             // ViewStatusBar
             // 
@@ -235,7 +249,7 @@
             this.Settings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.Settings.Image = ((System.Drawing.Image)(resources.GetObject("Settings.Image")));
             this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(40, 29);
+            this.Settings.Size = new System.Drawing.Size(40, 37);
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
             // 
             // InputBox
@@ -249,6 +263,8 @@
             this.InputBox.TabIndex = 1;
             this.InputBox.TabStop = false;
             this.InputBox.Text = "";
+            this.InputBox.TextChanged += new System.EventHandler(this.InputBox_TextChanged);
+            this.InputBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputBox_KeyDown);
             // 
             // StatusBar
             // 
@@ -293,6 +309,15 @@
             this.ZoomStatus.Size = new System.Drawing.Size(57, 25);
             this.ZoomStatus.Text = "100%";
             // 
+            // InputBoxFind
+            // 
+            this.InputBoxFind.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputBoxFind.Name = "InputBoxFind";
+            this.InputBoxFind.Size = new System.Drawing.Size(400, 37);
+            this.InputBoxFind.Visible = false;
+            this.InputBoxFind.Leave += new System.EventHandler(this.InputBoxFind_Leave);
+            this.InputBoxFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputBoxFind_KeyDown);
+            // 
             // QNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -307,6 +332,7 @@
             this.Name = "QNote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QNote";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QNote_KeyDown);
             this.Resize += new System.EventHandler(this.QNote_Resize);
             this.Options.ResumeLayout(false);
             this.Options.PerformLayout();
@@ -320,7 +346,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip Options;
-        private System.Windows.Forms.ToolStripMenuItem File;
+        private System.Windows.Forms.ToolStripMenuItem QFile;
         private System.Windows.Forms.ToolStripMenuItem Edit;
         private System.Windows.Forms.ToolStripMenuItem Views;
         private System.Windows.Forms.ToolStripMenuItem Settings;
@@ -348,6 +374,7 @@
         private System.Windows.Forms.ToolStripMenuItem ViewZoomOut;
         private System.Windows.Forms.ToolStripMenuItem ViewZoomReset;
         private System.Windows.Forms.ToolStripMenuItem ViewStatusBar;
+        private System.Windows.Forms.ToolStripTextBox InputBoxFind;
     }
 }
 
