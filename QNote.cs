@@ -92,32 +92,34 @@ namespace QNote
      
         private void FileOpen_Click(object sender, EventArgs e)
         {
-            this.OpenFile = new OpenFileDialog();
-            this.OpenFile.Title = "Open File";
-            this.OpenFile.Filter = "Text File|*.txt" + "|All Files|*.*";
-            //this.OpenFile.Filter = "Word Documents|*.doc|Excel Worksheets|*.xls|PowerPoint Presentations|*.ppt" +
-            // "|Office Files|*.doc;*.xls;*.ppt" +
-            // "|All Files|*.*";
-            this.OpenFile.ShowDialog();
-            string text;
-            string file;
-            file = this.OpenFile.FileName;
-            text = File.ReadAllText(file);
-            this.Text = file;
-            this.CurrentFile = file; 
-            this.InputBox.Text = text;
-          //  data = File.Read
+            try
+            {
+                this.OpenFile = new OpenFileDialog();
+                this.OpenFile.Title = "Open File";
+                this.OpenFile.Filter = "Text File|*.txt" + "|All Files|*.*";
+                //this.OpenFile.Filter = "Word Documents|*.doc|Excel Worksheets|*.xls|PowerPoint Presentations|*.ppt" +
+                // "|Office Files|*.doc;*.xls;*.ppt" +
+                // "|All Files|*.*";
+                this.OpenFile.ShowDialog();
+                string text;
+                string file;
+                file = this.OpenFile.FileName;
+                text = File.ReadAllText(file);
+                this.Text = file;
+                this.CurrentFile = file;
+                this.InputBox.Text = text;
+                //  data = File.Read
+            }catch(Exception error)
+            {
+            // ShowError(error);
+            }
         }
 
         private void FileSave_Click(object sender, EventArgs e)
         {
             try
             {
-                //MessageBox.Show(sender.GetType().ToString());
-                if (this.InputBox.Text == "" || this.InputBox.Text == null)
-                {
-                    return;
-                }
+           
                 if (this.CurrentFile == "" || this.CurrentFile == null)
                 {
 
@@ -161,7 +163,7 @@ namespace QNote
         }
         private void ShowError(Exception ex)
         {
-            MessageBox.Show("Error", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show( ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         private void InputBox_TextChanged(object sender, EventArgs e)
         {
@@ -184,8 +186,6 @@ namespace QNote
                 {
                     return;
                 }
-
-
                 this.SaveFile = new SaveFileDialog();
                 this.SaveFile.Title = "Save File";
                 this.SaveFile.Filter = "Text File|*.txt" + "|All Files|*.*";
@@ -316,7 +316,7 @@ namespace QNote
 
         private void EditDate_Click(object sender, EventArgs e)
         {
-            this.InputBox.Text += DateTime.Now; 
+            this.InputBox.Text += $" {DateTime.Now} "; 
         }
 
         private void ViewSoomIn_Click(object sender, EventArgs e)

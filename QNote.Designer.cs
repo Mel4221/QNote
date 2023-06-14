@@ -52,13 +52,13 @@
             this.ViewZoomReset = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewStatusBar = new System.Windows.Forms.ToolStripMenuItem();
             this.Settings = new System.Windows.Forms.ToolStripMenuItem();
+            this.InputBoxFind = new System.Windows.Forms.ToolStripTextBox();
             this.InputBox = new System.Windows.Forms.RichTextBox();
             this.StatusBar = new System.Windows.Forms.ToolStrip();
             this.LCStatus = new System.Windows.Forms.ToolStripLabel();
             this.UnicodeType = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.ZoomStatus = new System.Windows.Forms.ToolStripLabel();
-            this.InputBoxFind = new System.Windows.Forms.ToolStripTextBox();
             this.Options.SuspendLayout();
             this.StatusBar.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +75,7 @@
             this.InputBoxFind});
             this.Options.Location = new System.Drawing.Point(0, 0);
             this.Options.Name = "Options";
-            this.Options.Size = new System.Drawing.Size(1059, 41);
+            this.Options.Size = new System.Drawing.Size(1059, 33);
             this.Options.TabIndex = 0;
             this.Options.Text = "Options";
             // 
@@ -88,41 +88,41 @@
             this.FilePrint,
             this.FileExit});
             this.QFile.Name = "QFile";
-            this.QFile.Size = new System.Drawing.Size(54, 31);
+            this.QFile.Size = new System.Drawing.Size(54, 29);
             this.QFile.Text = "File";
             // 
             // FileOpen
             // 
             this.FileOpen.Name = "FileOpen";
-            this.FileOpen.Size = new System.Drawing.Size(270, 34);
+            this.FileOpen.Size = new System.Drawing.Size(176, 34);
             this.FileOpen.Text = "Open";
             this.FileOpen.Click += new System.EventHandler(this.FileOpen_Click);
             // 
             // FileSave
             // 
             this.FileSave.Name = "FileSave";
-            this.FileSave.Size = new System.Drawing.Size(270, 34);
+            this.FileSave.Size = new System.Drawing.Size(176, 34);
             this.FileSave.Text = "Save";
             this.FileSave.Click += new System.EventHandler(this.FileSave_Click);
             // 
             // FileSaveAs
             // 
             this.FileSaveAs.Name = "FileSaveAs";
-            this.FileSaveAs.Size = new System.Drawing.Size(270, 34);
+            this.FileSaveAs.Size = new System.Drawing.Size(176, 34);
             this.FileSaveAs.Text = "Save As";
             this.FileSaveAs.Click += new System.EventHandler(this.FileSaveAs_Click);
             // 
             // FilePrint
             // 
             this.FilePrint.Name = "FilePrint";
-            this.FilePrint.Size = new System.Drawing.Size(270, 34);
+            this.FilePrint.Size = new System.Drawing.Size(176, 34);
             this.FilePrint.Text = "Print";
             this.FilePrint.Click += new System.EventHandler(this.FilePrint_Click);
             // 
             // FileExit
             // 
             this.FileExit.Name = "FileExit";
-            this.FileExit.Size = new System.Drawing.Size(270, 34);
+            this.FileExit.Size = new System.Drawing.Size(176, 34);
             this.FileExit.Text = "Exit";
             this.FileExit.Click += new System.EventHandler(this.FileExit_Click);
             // 
@@ -138,61 +138,61 @@
             this.EditDate,
             this.EditFont});
             this.Edit.Name = "Edit";
-            this.Edit.Size = new System.Drawing.Size(58, 37);
+            this.Edit.Size = new System.Drawing.Size(58, 29);
             this.Edit.Text = "Edit";
             // 
             // EditUndu
             // 
             this.EditUndu.Name = "EditUndu";
-            this.EditUndu.Size = new System.Drawing.Size(270, 34);
+            this.EditUndu.Size = new System.Drawing.Size(206, 34);
             this.EditUndu.Text = "Undu";
             this.EditUndu.Click += new System.EventHandler(this.EditUndu_Click);
             // 
             // EditCut
             // 
             this.EditCut.Name = "EditCut";
-            this.EditCut.Size = new System.Drawing.Size(270, 34);
+            this.EditCut.Size = new System.Drawing.Size(206, 34);
             this.EditCut.Text = "Cut";
             // 
             // EditCopy
             // 
             this.EditCopy.Name = "EditCopy";
-            this.EditCopy.Size = new System.Drawing.Size(270, 34);
+            this.EditCopy.Size = new System.Drawing.Size(206, 34);
             this.EditCopy.Text = "Copy";
             this.EditCopy.Click += new System.EventHandler(this.EditCopy_Click);
             // 
             // EditPaste
             // 
             this.EditPaste.Name = "EditPaste";
-            this.EditPaste.Size = new System.Drawing.Size(270, 34);
+            this.EditPaste.Size = new System.Drawing.Size(206, 34);
             this.EditPaste.Text = "Paste";
             this.EditPaste.Click += new System.EventHandler(this.EditPaste_Click);
             // 
             // EditDelete
             // 
             this.EditDelete.Name = "EditDelete";
-            this.EditDelete.Size = new System.Drawing.Size(270, 34);
+            this.EditDelete.Size = new System.Drawing.Size(206, 34);
             this.EditDelete.Text = "Delete";
             this.EditDelete.Click += new System.EventHandler(this.EditDelete_Click);
             // 
             // EditFind
             // 
             this.EditFind.Name = "EditFind";
-            this.EditFind.Size = new System.Drawing.Size(270, 34);
+            this.EditFind.Size = new System.Drawing.Size(206, 34);
             this.EditFind.Text = "Find";
             this.EditFind.Click += new System.EventHandler(this.EditFind_Click);
             // 
             // EditDate
             // 
             this.EditDate.Name = "EditDate";
-            this.EditDate.Size = new System.Drawing.Size(270, 34);
+            this.EditDate.Size = new System.Drawing.Size(206, 34);
             this.EditDate.Text = "Time / Date";
             this.EditDate.Click += new System.EventHandler(this.EditDate_Click);
             // 
             // EditFont
             // 
             this.EditFont.Name = "EditFont";
-            this.EditFont.Size = new System.Drawing.Size(270, 34);
+            this.EditFont.Size = new System.Drawing.Size(206, 34);
             this.EditFont.Text = "Font";
             // 
             // Views
@@ -201,7 +201,7 @@
             this.ViewZoom,
             this.ViewStatusBar});
             this.Views.Name = "Views";
-            this.Views.Size = new System.Drawing.Size(65, 37);
+            this.Views.Size = new System.Drawing.Size(65, 29);
             this.Views.Text = "View";
             // 
             // ViewZoom
@@ -249,8 +249,17 @@
             this.Settings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.Settings.Image = ((System.Drawing.Image)(resources.GetObject("Settings.Image")));
             this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(40, 37);
+            this.Settings.Size = new System.Drawing.Size(40, 29);
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
+            // 
+            // InputBoxFind
+            // 
+            this.InputBoxFind.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputBoxFind.Name = "InputBoxFind";
+            this.InputBoxFind.Size = new System.Drawing.Size(400, 37);
+            this.InputBoxFind.Visible = false;
+            this.InputBoxFind.Leave += new System.EventHandler(this.InputBoxFind_Leave);
+            this.InputBoxFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputBoxFind_KeyDown);
             // 
             // InputBox
             // 
@@ -308,15 +317,6 @@
             this.ZoomStatus.Name = "ZoomStatus";
             this.ZoomStatus.Size = new System.Drawing.Size(57, 25);
             this.ZoomStatus.Text = "100%";
-            // 
-            // InputBoxFind
-            // 
-            this.InputBoxFind.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputBoxFind.Name = "InputBoxFind";
-            this.InputBoxFind.Size = new System.Drawing.Size(400, 37);
-            this.InputBoxFind.Visible = false;
-            this.InputBoxFind.Leave += new System.EventHandler(this.InputBoxFind_Leave);
-            this.InputBoxFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputBoxFind_KeyDown);
             // 
             // QNote
             // 
