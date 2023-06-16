@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Drawing.Printing;
+using System.Diagnostics;
 
 namespace QNote
 {
@@ -172,10 +172,28 @@ namespace QNote
 
         private void FilePrint_Click(object sender, EventArgs e)
         {
-            PrintDialog print = new PrintDialog();
-            print.Document = new PrintDocument(); 
-            print.PrintToFile = true;
-            print.ShowDialog();
+            //Writer.Write(cvFile, cv);
+            if(this.CurrentFile == null || this.CurrentFile == "")
+            {
+                return;
+            }
+            string file,text;
+            file = $"{QTool.RemoveFileNameExtention(this.CurrentFile)}.html";
+            text = $"<html>" +
+                $"<head>" +
+                $"<title>" +
+                $"{this.CurrentFile}" +
+                $"</title>" +
+                $"</head>" +
+                $"<body>{this.InputBox.Text}</body>" +
+                $"</html>";
+
+            //MessageBox.Show(file);
+            File.WriteAllText(file,text);
+            ProcessStartInfo processInfo = new ProcessStartInfo();
+            processInfo.FileName = file;
+            processInfo.UseShellExecute = true;
+            Process.Start(processInfo);
         }
 
         private void FileSaveAs_Click(object sender, EventArgs e)

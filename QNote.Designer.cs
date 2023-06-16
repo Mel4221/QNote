@@ -75,7 +75,7 @@
             this.InputBoxFind});
             this.Options.Location = new System.Drawing.Point(0, 0);
             this.Options.Name = "Options";
-            this.Options.Size = new System.Drawing.Size(1059, 33);
+            this.Options.Size = new System.Drawing.Size(1059, 41);
             this.Options.TabIndex = 0;
             this.Options.Text = "Options";
             // 
@@ -88,41 +88,41 @@
             this.FilePrint,
             this.FileExit});
             this.QFile.Name = "QFile";
-            this.QFile.Size = new System.Drawing.Size(54, 29);
+            this.QFile.Size = new System.Drawing.Size(54, 37);
             this.QFile.Text = "File";
             // 
             // FileOpen
             // 
             this.FileOpen.Name = "FileOpen";
-            this.FileOpen.Size = new System.Drawing.Size(176, 34);
+            this.FileOpen.Size = new System.Drawing.Size(270, 34);
             this.FileOpen.Text = "Open";
             this.FileOpen.Click += new System.EventHandler(this.FileOpen_Click);
             // 
             // FileSave
             // 
             this.FileSave.Name = "FileSave";
-            this.FileSave.Size = new System.Drawing.Size(176, 34);
+            this.FileSave.Size = new System.Drawing.Size(270, 34);
             this.FileSave.Text = "Save";
             this.FileSave.Click += new System.EventHandler(this.FileSave_Click);
             // 
             // FileSaveAs
             // 
             this.FileSaveAs.Name = "FileSaveAs";
-            this.FileSaveAs.Size = new System.Drawing.Size(176, 34);
+            this.FileSaveAs.Size = new System.Drawing.Size(270, 34);
             this.FileSaveAs.Text = "Save As";
             this.FileSaveAs.Click += new System.EventHandler(this.FileSaveAs_Click);
             // 
             // FilePrint
             // 
             this.FilePrint.Name = "FilePrint";
-            this.FilePrint.Size = new System.Drawing.Size(176, 34);
+            this.FilePrint.Size = new System.Drawing.Size(270, 34);
             this.FilePrint.Text = "Print";
             this.FilePrint.Click += new System.EventHandler(this.FilePrint_Click);
             // 
             // FileExit
             // 
             this.FileExit.Name = "FileExit";
-            this.FileExit.Size = new System.Drawing.Size(176, 34);
+            this.FileExit.Size = new System.Drawing.Size(270, 34);
             this.FileExit.Text = "Exit";
             this.FileExit.Click += new System.EventHandler(this.FileExit_Click);
             // 
@@ -138,7 +138,7 @@
             this.EditDate,
             this.EditFont});
             this.Edit.Name = "Edit";
-            this.Edit.Size = new System.Drawing.Size(58, 29);
+            this.Edit.Size = new System.Drawing.Size(58, 37);
             this.Edit.Text = "Edit";
             // 
             // EditUndu
@@ -201,7 +201,7 @@
             this.ViewZoom,
             this.ViewStatusBar});
             this.Views.Name = "Views";
-            this.Views.Size = new System.Drawing.Size(65, 29);
+            this.Views.Size = new System.Drawing.Size(65, 37);
             this.Views.Text = "View";
             // 
             // ViewZoom
@@ -211,7 +211,7 @@
             this.ViewZoomOut,
             this.ViewZoomReset});
             this.ViewZoom.Name = "ViewZoom";
-            this.ViewZoom.Size = new System.Drawing.Size(270, 34);
+            this.ViewZoom.Size = new System.Drawing.Size(192, 34);
             this.ViewZoom.Text = "Zoom";
             // 
             // ViewSoomIn
@@ -240,7 +240,7 @@
             this.ViewStatusBar.Checked = true;
             this.ViewStatusBar.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ViewStatusBar.Name = "ViewStatusBar";
-            this.ViewStatusBar.Size = new System.Drawing.Size(270, 34);
+            this.ViewStatusBar.Size = new System.Drawing.Size(192, 34);
             this.ViewStatusBar.Text = "Status Bar";
             this.ViewStatusBar.Click += new System.EventHandler(this.ViewStatusBar_Click);
             // 
@@ -249,7 +249,7 @@
             this.Settings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.Settings.Image = ((System.Drawing.Image)(resources.GetObject("Settings.Image")));
             this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(40, 29);
+            this.Settings.Size = new System.Drawing.Size(40, 37);
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
             // 
             // InputBoxFind

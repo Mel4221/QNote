@@ -13,19 +13,27 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>C:\Users\Melquiceded\Documents\csharp\_QNote\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <UpdateUrl>https://github.com/Mel4221/QNote/tree/testing/bin/Release/</UpdateUrl>
+    <SupportUrl>https://github.com/Mel4221/QNote/</SupportUrl>
+    <ErrorReportUrl>https://github.com/Mel4221/QNote/</ErrorReportUrl>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>QNote</ProductName>
+    <PublisherName>Melquiceded Balbi Villanueva</PublisherName>
+    <SuiteName>MBV</SuiteName>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -103,6 +111,7 @@
     <Compile Include="QNoteSettings.Designer.cs">
       <DependentUpon>QNoteSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="QTool.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

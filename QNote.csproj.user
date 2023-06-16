@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>publish\</PublishUrlHistory>
+    <PublishUrlHistory>C:\Users\Melquiceded\Documents\csharp\_QNote\|publish\</PublishUrlHistory>
     <InstallUrlHistory />
-    <SupportUrlHistory />
+    <SupportUrlHistory>https://github.com/Mel4221/QNote/</SupportUrlHistory>
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />
-    <ErrorReportUrlHistory />
+    <ErrorReportUrlHistory>https://github.com/Mel4221/QNote/</ErrorReportUrlHistory>
     <FallbackCulture>en-US</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
