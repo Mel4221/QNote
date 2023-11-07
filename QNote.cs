@@ -8,11 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Printing;
 using System.Diagnostics;
+using System.Printing;
+using System.Threading;
+using System.Configuration;
+using System.Runtime.CompilerServices;
+using QuickTools.QData;
 
 namespace QNote
 {
+
     public partial class QNote : Form
     {
         /// <summary>
@@ -21,13 +26,15 @@ namespace QNote
         private string CurrentFile { get; set; }
         private OpenFileDialog OpenFile;
         private SaveFileDialog SaveFile;
-
+        private string[] Args = Environment.GetCommandLineArgs();
+       
         public QNote()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.InitComponents();
 
         }
+       
         private void InitComponents()
         {
             RichTextBox box = this.InputBox;
@@ -38,13 +45,39 @@ namespace QNote
             //to start writting inmidiatly
             //this.InputBox.Focus();
             this.InputBox.Select();
+            this.LoadArgs();
+           
+            
 
         }
+
+        private void LoadArgs()
+        {
+            if (this.Args.Length >= 2)
+            {
+                if (File.Exists(this.Args[1]))
+                {
+                    this.InputBox.Text = File.ReadAllText(this.Args[1]);
+                    this.CurrentFile = this.Args[1];
+                    this.Text = this.Args[1];
+                }
+            }
+        }
+
         private void Settings_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new QNoteSettings().Show();
+            if (!this.Worker.IsBusy && Reload == false)
+            {
+                QNoteSettings settings = new QNoteSettings();
+                this.Hide();
+                settings.Show();
+                this.Worker.RunWorkerAsync();
+            }
+            
         }
+           
+           
+
 
         private void QNote_Resize(object sender, EventArgs e)
         {
@@ -96,7 +129,7 @@ namespace QNote
             {
                 this.OpenFile = new OpenFileDialog();
                 this.OpenFile.Title = "Open File";
-                this.OpenFile.Filter = "Text File|*.txt" + "|All Files|*.*";
+                this.OpenFile.Filter = "All Files|*.*";
                 //this.OpenFile.Filter = "Word Documents|*.doc|Excel Worksheets|*.xls|PowerPoint Presentations|*.ppt" +
                 // "|Office Files|*.doc;*.xls;*.ppt" +
                 // "|All Files|*.*";
@@ -158,7 +191,7 @@ namespace QNote
             }
             catch (Exception ex)
             {
-                ShowError(ex);
+               // ShowError(ex);
             }
         }
         private void ShowError(Exception ex)
@@ -170,30 +203,68 @@ namespace QNote
             
         }
 
+ 
         private void FilePrint_Click(object sender, EventArgs e)
         {
-            //Writer.Write(cvFile, cv);
-            if(this.CurrentFile == null || this.CurrentFile == "")
+      
+            try
             {
+                //Writer.Write(cvFile, cv);
+                if (this.CurrentFile == null || this.CurrentFile == "")
+                {
+                    return;
+                }
+                //this.Hide(); 
+                string file;
+                //new Thread(() =>
+                //{
+                
+                    file = this.CurrentFile;//$"{QTool.RemoveFileNameExtention(this.CurrentFile)}.html";
+                    var f = File.ReadAllBytes(file);
+                    var printQueue = LocalPrintServer.GetDefaultPrintQueue();
+                    //printQueue.SeparatorFile = QTool.RemoveFileNameExtention(file);
+
+                    using (var job = printQueue.AddJob())
+                    using (var stream = job.JobStream)
+                    {
+                        stream.Write(f, 0, f.Length);
+                    }
+                 //}).Start();
+                //GC.Collect();
+                //this.Show();
                 return;
             }
-            string file,text;
-            file = $"{QTool.RemoveFileNameExtention(this.CurrentFile)}.html";
-            text = $"<html>" +
-                $"<head>" +
-                $"<title>" +
-                $"{this.CurrentFile}" +
-                $"</title>" +
-                $"</head>" +
-                $"<body>{this.InputBox.Text}</body>" +
-                $"</html>";
+            catch
+            {
 
-            //MessageBox.Show(file);
-            File.WriteAllText(file,text);
-            ProcessStartInfo processInfo = new ProcessStartInfo();
-            processInfo.FileName = file;
-            processInfo.UseShellExecute = true;
-            Process.Start(processInfo);
+            }
+
+            //System.Diagnostics.ProcessStartInfo process = new System.Diagnostics.ProcessStartInfo(file);
+            //process.Verb = "PRINT";
+
+            //Process.Start(process);
+            //text = $"<html>" +
+            //    $"<head>" +
+            //    $"<title>" +
+            //    $"{this.CurrentFile}" +
+            //    $"</title>" +
+            //    $"</head>" +
+            //    $"<body>{this.InputBox.Text.Replace(System.Environment.NewLine, "<br />")}</body>" +
+            //    $"</html>";
+
+            ////MessageBox.Show(file);
+            ////File.WriteAllText(file,text,System.Text.Encoding.ASCII);
+            //File.WriteAllText(file, text);
+
+            //ProcessStartInfo processInfo = new ProcessStartInfo();
+            //processInfo.FileName = file;
+            //processInfo.UseShellExecute = true;
+            //Process.Start(processInfo);
+            //DialogResult result = MessageBox.Show("Print Completed","Info",MessageBoxButtons.OK);
+            //if(result == DialogResult.OK)
+            //{
+            //    File.Delete(file); 
+            //}
         }
 
         private void FileSaveAs_Click(object sender, EventArgs e)
@@ -232,7 +303,7 @@ namespace QNote
                 return;
             }catch(Exception error)
             {
-                ShowError(error);
+              //  ShowError(error);
             }
                
             
@@ -257,7 +328,17 @@ namespace QNote
                 // Do what you want here
                 e.SuppressKeyPress = true;  // Stops other controls on the form receiving event.
             }
-            //Open File Triger
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            //File Triger
             if (e.Control && e.KeyCode == Keys.O)       // Ctrl-S Save
             {
                 //MessageBox.Show("Pressed");
@@ -351,6 +432,67 @@ namespace QNote
         {
             this.InputBox.Font = new Font(FontFamily.GenericSansSerif,8);
 
+        }
+
+        private void QNote_Load(object sender, EventArgs e)
+        {
+            this.LoadAllSettings();
+             
+        }
+        private static string Get(string setting)
+        {
+            KeyManager settings = new KeyManager(new QNoteSettings().SettingsFile);
+            settings.Create();
+            settings.LoadKeys();
+            return settings.GetKey(setting).Value;
+        }
+        private void LoadAllSettings()
+        {
+            KeyManager settings = new KeyManager(new QNoteSettings().SettingsFile);
+            settings.Create();
+            settings.LoadKeys();
+            if(settings.Keys.Count > 0)
+            {
+                this.InputBox.Font = new Font(Get("Font"), float.Parse(Get("FontSize")), FontStyle.Regular);
+                //SettingFontType.Text = $"{SettingFontType.Font.Name} {SettingFontType.Font.Size}";
+                this.InputBox.ForeColor = Color.FromName(Get("FontColor"));
+                this.InputBox.BackColor = Color.FromName(Get("BackgroundColor"));
+               // MessageBox.Show($"{Get("Font")} {float.Parse(Get("FontSize"))} {Get("FontColor")} {Get("BackgroundColor")}");
+            }
+        }
+        public static bool Reload { get; set; } = false;
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (true)
+            {
+                if(Reload ==  true)
+                {
+                    break; 
+                }
+            }
+        }
+
+        private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.Show();
+            this.LoadAllSettings();
+            Reload = false;
+           
+            //MessageBox.Show("Worker completed it's job");
+        }
+
+        private void InputBox_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.V && e.Control)
+            {
+                this.LoadAllSettings();
+                //MessageBox.Show("ok");
+                //e.SuppressKeyPress = false;
+            }
+            else
+            {
+                //e.SuppressKeyPress = true; 
+            }
         }
     }
 }

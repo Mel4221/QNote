@@ -59,6 +59,7 @@
             this.UnicodeType = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.ZoomStatus = new System.Windows.Forms.ToolStripLabel();
+            this.Worker = new System.ComponentModel.BackgroundWorker();
             this.Options.SuspendLayout();
             this.StatusBar.SuspendLayout();
             this.SuspendLayout();
@@ -94,35 +95,35 @@
             // FileOpen
             // 
             this.FileOpen.Name = "FileOpen";
-            this.FileOpen.Size = new System.Drawing.Size(270, 34);
+            this.FileOpen.Size = new System.Drawing.Size(176, 34);
             this.FileOpen.Text = "Open";
             this.FileOpen.Click += new System.EventHandler(this.FileOpen_Click);
             // 
             // FileSave
             // 
             this.FileSave.Name = "FileSave";
-            this.FileSave.Size = new System.Drawing.Size(270, 34);
+            this.FileSave.Size = new System.Drawing.Size(176, 34);
             this.FileSave.Text = "Save";
             this.FileSave.Click += new System.EventHandler(this.FileSave_Click);
             // 
             // FileSaveAs
             // 
             this.FileSaveAs.Name = "FileSaveAs";
-            this.FileSaveAs.Size = new System.Drawing.Size(270, 34);
+            this.FileSaveAs.Size = new System.Drawing.Size(176, 34);
             this.FileSaveAs.Text = "Save As";
             this.FileSaveAs.Click += new System.EventHandler(this.FileSaveAs_Click);
             // 
             // FilePrint
             // 
             this.FilePrint.Name = "FilePrint";
-            this.FilePrint.Size = new System.Drawing.Size(270, 34);
+            this.FilePrint.Size = new System.Drawing.Size(176, 34);
             this.FilePrint.Text = "Print";
             this.FilePrint.Click += new System.EventHandler(this.FilePrint_Click);
             // 
             // FileExit
             // 
             this.FileExit.Name = "FileExit";
-            this.FileExit.Size = new System.Drawing.Size(270, 34);
+            this.FileExit.Size = new System.Drawing.Size(176, 34);
             this.FileExit.Text = "Exit";
             this.FileExit.Click += new System.EventHandler(this.FileExit_Click);
             // 
@@ -263,6 +264,7 @@
             // 
             // InputBox
             // 
+            this.InputBox.AcceptsTab = true;
             this.InputBox.BackColor = System.Drawing.Color.Black;
             this.InputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputBox.ForeColor = System.Drawing.Color.Lime;
@@ -273,7 +275,7 @@
             this.InputBox.TabStop = false;
             this.InputBox.Text = "";
             this.InputBox.TextChanged += new System.EventHandler(this.InputBox_TextChanged);
-            this.InputBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputBox_KeyDown);
+            this.InputBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputBox_KeyDown_1);
             // 
             // StatusBar
             // 
@@ -318,6 +320,13 @@
             this.ZoomStatus.Size = new System.Drawing.Size(57, 25);
             this.ZoomStatus.Text = "100%";
             // 
+            // Worker
+            // 
+            this.Worker.WorkerReportsProgress = true;
+            this.Worker.WorkerSupportsCancellation = true;
+            this.Worker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.Worker_DoWork);
+            this.Worker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.Worker_RunWorkerCompleted);
+            // 
             // QNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -332,6 +341,7 @@
             this.Name = "QNote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QNote";
+            this.Load += new System.EventHandler(this.QNote_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QNote_KeyDown);
             this.Resize += new System.EventHandler(this.QNote_Resize);
             this.Options.ResumeLayout(false);
@@ -350,7 +360,6 @@
         private System.Windows.Forms.ToolStripMenuItem Edit;
         private System.Windows.Forms.ToolStripMenuItem Views;
         private System.Windows.Forms.ToolStripMenuItem Settings;
-        private System.Windows.Forms.RichTextBox InputBox;
         private System.Windows.Forms.ToolStrip StatusBar;
         private System.Windows.Forms.ToolStripLabel LCStatus;
         private System.Windows.Forms.ToolStripLabel ZoomStatus;
@@ -375,6 +384,8 @@
         private System.Windows.Forms.ToolStripMenuItem ViewZoomReset;
         private System.Windows.Forms.ToolStripMenuItem ViewStatusBar;
         private System.Windows.Forms.ToolStripTextBox InputBoxFind;
+        public System.Windows.Forms.RichTextBox InputBox;
+        private System.ComponentModel.BackgroundWorker Worker;
     }
 }
 

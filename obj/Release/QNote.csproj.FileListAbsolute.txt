@@ -1,4 +1,5 @@
-C:\Users\Melquiceded\Documents\csharp\QNote\bin\Release\QNote.exe.config
+C:\Users\Melquiceded\Documents\csharp\QNote\bin\Release\QNote.exe.manifest
+C:\Users\Melquiceded\Documents\csharp\QNote\bin\Release\QNote.application
 C:\Users\Melquiceded\Documents\csharp\QNote\bin\Release\QNote.exe
 C:\Users\Melquiceded\Documents\csharp\QNote\bin\Release\QNote.pdb
 C:\Users\Melquiceded\Documents\csharp\QNote\obj\Release\QNote.csproj.AssemblyReference.cache
@@ -8,10 +9,9 @@ C:\Users\Melquiceded\Documents\csharp\QNote\obj\Release\QNote.QNote.resources
 C:\Users\Melquiceded\Documents\csharp\QNote\obj\Release\QNote.QNoteSettings.resources
 C:\Users\Melquiceded\Documents\csharp\QNote\obj\Release\QNote.csproj.GenerateResource.cache
 C:\Users\Melquiceded\Documents\csharp\QNote\obj\Release\QNote.csproj.CoreCompileInputs.cache
-C:\Users\Melquiceded\Documents\csharp\QNote\obj\Release\QNote.exe
-C:\Users\Melquiceded\Documents\csharp\QNote\obj\Release\QNote.pdb
-C:\Users\Melquiceded\Documents\csharp\QNote\bin\Release\QNote.exe.manifest
-C:\Users\Melquiceded\Documents\csharp\QNote\bin\Release\QNote.application
 C:\Users\Melquiceded\Documents\csharp\QNote\obj\Release\QNote.TrustInfo.xml
 C:\Users\Melquiceded\Documents\csharp\QNote\obj\Release\QNote.exe.manifest
 C:\Users\Melquiceded\Documents\csharp\QNote\obj\Release\QNote.application
+C:\Users\Melquiceded\Documents\csharp\QNote\obj\Release\QNote.exe
+C:\Users\Melquiceded\Documents\csharp\QNote\obj\Release\QNote.pdb
+C:\Users\Melquiceded\Documents\csharp\QNote\bin\Release\QNote.exe.config
