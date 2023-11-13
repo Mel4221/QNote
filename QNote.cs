@@ -150,57 +150,50 @@ namespace QNote
 
         private void FileSave_Click(object sender, EventArgs e)
         {
-            try
-            {
-           
-                if (this.CurrentFile == "" || this.CurrentFile == null)
-                {
-
-                    this.SaveFile = new SaveFileDialog();
-                    this.SaveFile.Title = "Save File";
-                    this.SaveFile.Filter = "Text File|*.txt" + "|All Files|*.*";
-                    string file, text;
-                    DialogResult dialog;
-                    this.SaveFile.ShowDialog();
-                    file = this.SaveFile.FileName;
-                    text = this.InputBox.Text;
-                    //MessageBox.Show(file);
-
-                    if (File.Exists(file))
-                    {
-                        dialog = MessageBox.Show("Warning", "The File exist Would you like to rewrite it", MessageBoxButtons.YesNo);
-                        if (dialog == DialogResult.Yes)
-                        {
-                            File.WriteAllText(file, text);
-                            this.CurrentFile = file;
-                            this.Text = file;
-                            return;
-                        }
-                        // FileSave_Click(sender, e);
-                    }
-
-                    File.WriteAllText(file, text);
-                    this.CurrentFile = file;
-                    this.Text = file;
-                    return;
-                }
-                else
-                {
-                    File.WriteAllText(this.CurrentFile, this.InputBox.Text);
-                }
+            try {
+                this.SaveChanges();
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-               // ShowError(ex);
+                    this.ShowError(ex);
             }
         }
         private void ShowError(Exception ex)
         {
             MessageBox.Show( ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public static string BufferSize(byte[] buffer)
+        {
+            string fileSize;
+
+            if ((buffer.Length / 1024 / 1024 / 1024) != 0)
+            {
+                fileSize = $"{buffer.Length / 1024 / 1024 / 1024}GB";
+                return fileSize;
+            }
+            if ((buffer.Length / 1024 / 1024) != 0)
+            {
+                fileSize = $"{buffer.Length / 1024 / 1024}MB";
+                return fileSize;
+            }
+            if ((buffer.Length / 1024) != 0)
+            {
+                fileSize = $"{buffer.Length / 1024}KB";
+                return fileSize;
+            }
+            fileSize = $"{buffer.Length}B";
+
+            return fileSize;
+        }
+        private void CalculateBufferSize()
+        {
+            string size = BufferSize(System.Text.ASCIIEncoding.ASCII.GetBytes(InputBox.Text));
+            this.BufferSizeLabel.Text = $"Buffer Size: {size}";
+        }
         private void InputBox_TextChanged(object sender, EventArgs e)
         {
-            
+            this.CalculateBufferSize(); 
         }
 
  
@@ -267,6 +260,11 @@ namespace QNote
             //}
         }
 
+        private void SaveChanges()
+        {
+            string text = this.InputBox.Text; 
+            File.WriteAllText(this.Text,text );
+        }
         private void FileSaveAs_Click(object sender, EventArgs e)
         {
             try
@@ -446,9 +444,10 @@ namespace QNote
             settings.LoadKeys();
             return settings.GetKey(setting).Value;
         }
+        private KeyManager settings = new KeyManager(new QNoteSettings().SettingsFile);
+
         private void LoadAllSettings()
         {
-            KeyManager settings = new KeyManager(new QNoteSettings().SettingsFile);
             settings.Create();
             settings.LoadKeys();
             if(settings.Keys.Count > 0)
@@ -483,9 +482,16 @@ namespace QNote
 
         private void InputBox_KeyDown_1(object sender, KeyEventArgs e)
         {
+            if(e.KeyCode == Keys.S && e.Control)
+            {
+                this.SaveChanges();
+            }
             if(e.KeyCode == Keys.V && e.Control)
             {
+                
+                
                 this.LoadAllSettings();
+                 
                 //MessageBox.Show("ok");
                 //e.SuppressKeyPress = false;
             }

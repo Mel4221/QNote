@@ -1,1 +1,25 @@
-this is some text some bullshit
+        public static string FileSize(string fileName)
+                  {
+                  string fileSize = null;
+                  var fileStream = new FileStream(fileName , FileMode.Open , FileAccess.Read);
+            Get.LongNumber = fileStream.Length;
+
+            if ((fileStream.Length / 1024 / 1024 / 1024) != 0 )
+                        {
+                        fileSize = $"{fileStream.Length / 1024 / 1024 / 1024}GB";
+                        return fileSize; 
+                        }
+                        if((fileStream.Length / 1024 / 1024 ) != 0)
+                        {
+                        fileSize = $"{fileStream.Length / 1024 / 1024 }MB";
+                        return fileSize;
+                        }
+                        if((fileStream.Length / 1024 ) != 0)
+                        {
+                        fileSize = $"{fileStream.Length / 1024 }KB";
+                        return fileSize;
+                        }
+                        fileSize = $"{fileStream.Length }B";
+
+                  return fileSize;
+                  }this is some text some bullshit 
